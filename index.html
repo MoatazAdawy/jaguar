@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+    <div class="container  pt-5">
+        <div class="text-center">
+            <h1 class="mb-5 w-auto">Bookmarker</h1>
+        </div>
+        <div class="bookbox w-100 p-4 d-flex justify-content-center align-items-center flex-column">
+            <div class=" ">
+                <h2 class="w-auto d-inline-block">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+            </div>
+        
+                <div class="site-name w-100 pb-3">
+                    <label class="pb-2 fw-semibold" for="bookmarkName">
+                        <i class="fa-solid fa-book-bookmark pe-2"></i>
+                        Site Name
+                    </label>
+                    <input id="bookmarkName" class="form-control" type="text" placeholder="Bookmark Name">
+                </div>
+                <div class="site-url w-100 pb-3">
+                    <label class="pb-2 fw-semibold" for="bookmarkSite">
+                        <i class="fa-solid fa-link pe-2"></i>
+                        Site URL
+                    </label>
+                    <input id="bookmarkSite" class="form-control" type="url" placeholder="Website URL">
+                </div>
+                <button id="submitBtn" class="btn btn-danger px-5 " type="button">Submit</button>
+                <button id="editBtn" onclick="editData()" class="btn btn-danger px-5 " style="display: none;" type="button">Edit</button>
+                
+                    <input onkeyup="search()" id="searchInput" class=" search-input  form-control w-75 mt-3 " type="search" placeholder="Shearch...">
+                    
+                
+        </div>
+        <table class="table bg-light w-100  text-center mt-4">
+            <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+       
+    </div>
+
+</main>
+        
+<div class="modal" id="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        
+      <div class="modal-content ">
+        
+        <div class="modal-header position-relative">
+          <h5 class="modal-title">Site Name or Url is not valid, Please follow the rules below :</h5>
+          <button id="closeInput" type="button" class="btn-close position-absolute " data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body my-3">
+            
+          <p><i class="fa-regular fa-circle-right text-danger"></i> Site name must contain at least 3 characters</p>
+          <p><i class="fa-regular fa-circle-right text-danger"></i> Site URL must be a valid one</p>
+        </div>
+      </div>
+    </div>
+  </div>   
+    
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
